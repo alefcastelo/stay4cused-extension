@@ -1,0 +1,31 @@
+{
+  "name": "Focus Me Now",
+  "version": "0.0.1",
+  "description": "Focus Me Now its an extension to help you keep focus on work.",
+  "manifest_version": 2,
+  "background": {
+    "scripts": ["./assets/background.js"],
+    "persistent": false
+  },
+  "permissions": [
+    "storage",
+    "activeTab",
+    "tabs",
+    "notifications",
+    "<all_urls>"
+  ],
+  "options_ui": {
+    "page": "index.html",
+    "open_in_tab": true
+  },
+  "browser_action": {
+    "default_icon": "/assets/images/favicon-16.png",
+    "default_popup": "index.html"
+  },
+  "icons": {
+    "16": "/assets/images/favicon-16.png",
+    "32": "/assets/images/favicon-32.png",
+    "48": "/assets/images/favicon-48.png",
+    "128": "/assets/images/favicon-128.png"
+  }
+}
