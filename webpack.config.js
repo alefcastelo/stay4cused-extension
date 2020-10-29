@@ -11,8 +11,8 @@ module.exports = {
     poll: 1000,
   },
   entry: {
-    index: "./src/index.tsx",
-    background: "./src/background.ts",
+    index: "./src/Index.tsx",
+    background: "./src/Background.ts",
   },
   output: {
     filename: "assets/[name].js",

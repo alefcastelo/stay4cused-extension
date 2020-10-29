@@ -1,7 +1,7 @@
 {
-  "name": "Focus Me Now",
+  "name": "Stay4Cused",
   "version": "0.0.1",
-  "description": "Focus Me Now its an extension to help you keep focus on work.",
+  "description": "Stay4Cused its an extension to help you keep focus on work.",
   "manifest_version": 2,
   "background": {
     "scripts": ["./assets/background.js"],
