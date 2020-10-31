@@ -5,7 +5,7 @@ import {
   Switch,
   Route
 } from 'react-router-dom'
-import Countdown from './Pages/Countdown'
+import Home from './Pages/Home'
 
 const App: React.FC = () => {
   return (
@@ -14,7 +14,7 @@ const App: React.FC = () => {
         <Layout>
           <Switch>
             <Route path="/">
-              <Countdown />
+              <Home />
             </Route>
           </Switch>
         </Layout>

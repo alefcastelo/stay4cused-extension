@@ -1,0 +1,17 @@
+{
+    "compilerOptions": {
+        "allowJs": true,
+        "declaration": true,
+        "emitDeclarationOnly": true,
+        "experimentalDecorators": true,
+        "esModuleInterop": true,
+        "skipLibCheck": true,
+        "jsx": "react"
+    },
+    "exclude": [
+        "node_modules",
+        "public",
+        "tmp",
+        "dist"
+    ]
+}

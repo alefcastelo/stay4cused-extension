@@ -4,6 +4,8 @@
         "es2021": true
     },
     "extends": [
+        "typescript",
+        "typescript/react",
         "plugin:react/recommended",
         "standard"
     ],
@@ -20,6 +22,7 @@
         "@typescript-eslint"
     ],
     "rules": {
+        "no-unused-vars": "off",
         "no-use-before-define": "off"
     }
 }

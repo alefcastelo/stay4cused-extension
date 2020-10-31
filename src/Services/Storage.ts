@@ -1,6 +1,6 @@
 import store from 'store2'
 
-class Store {
+class Storage {
   static set (key: string, value: string, overwrite: boolean = false): void {
     store.set(key, value, overwrite)
   }
@@ -22,4 +22,4 @@ class Store {
   }
 }
 
-export default Store
+export default Storage

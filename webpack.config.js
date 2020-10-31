@@ -1,36 +1,36 @@
-const CopyPlugin = require("copy-webpack-plugin");
-const CleanWebpackPlugin = require("clean-webpack-plugin").CleanWebpackPlugin;
-const UnminifiedWebpackPlugin = require("unminified-webpack-plugin");
-const path = require("path");
+const CopyPlugin = require('copy-webpack-plugin')
+const CleanWebpackPlugin = require('clean-webpack-plugin').CleanWebpackPlugin
+const UnminifiedWebpackPlugin = require('unminified-webpack-plugin')
+const path = require('path')
 
 module.exports = {
   mode: process.env.APP_ENV,
   watch: true,
   watchOptions: {
     ignored: /node_modules/,
-    poll: 1000,
+    poll: 1000
   },
   entry: {
-    index: "./src/Index.tsx",
-    background: "./src/Background.ts",
+    index: './src/Index.tsx',
+    background: './src/Background.ts'
   },
   output: {
-    filename: "assets/[name].js",
+    filename: 'assets/[name].js',
     path: path.resolve(__dirname, process.env.BUILD_PATH),
-    sourceMapFilename: "assets/map/[name].js.map",
+    sourceMapFilename: 'assets/map/[name].js.map'
   },
-  devtool: "inline-source-map",
+  devtool: 'inline-source-map',
   devServer: {
     inline: true,
     port: 3000,
     writeToDisk: true,
     disableHostCheck: true,
     headers: {
-      "Access-Control-Allow-Origin": "*",
-    },
+      'Access-Control-Allow-Origin': '*'
+    }
   },
   resolve: {
-    extensions: [".js", ".jsx", ".ts", ".tsx"],
+    extensions: ['.js', '.jsx', '.ts', '.tsx']
   },
   module: {
     rules: [
@@ -38,14 +38,14 @@ module.exports = {
         test: /\.(ts|tsx|js|jsx|)$/,
         exclude: /node_modules/,
         use: {
-          loader: "babel-loader",
-        },
+          loader: 'babel-loader'
+        }
       },
       {
         test: /\.svg$/,
-        loader: "svg-inline-loader",
-      },
-    ],
+        loader: 'svg-inline-loader'
+      }
+    ]
   },
   plugins: [
     new UnminifiedWebpackPlugin(),
@@ -53,10 +53,10 @@ module.exports = {
     new CopyPlugin({
       patterns: [
         {
-          from: "public",
-          to: ".",
-        },
-      ],
-    }),
-  ],
-};
+          from: 'public',
+          to: '.'
+        }
+      ]
+    })
+  ]
+}
