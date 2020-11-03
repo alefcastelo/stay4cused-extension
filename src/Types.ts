@@ -10,8 +10,8 @@ export enum TabEvent {
 }
 
 export enum PipelineResult {
-    Success = 'success',
-    Fail = 'fail',
+    Stop = 'stop',
+    Continue = 'Continue',
 }
 
 export interface PipelineItemInterface {

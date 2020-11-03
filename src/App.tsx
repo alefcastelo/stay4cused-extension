@@ -6,6 +6,8 @@ import {
   Route
 } from 'react-router-dom'
 import Home from './Pages/Home'
+import Blocklist from './Pages/Blocklist'
+import TabLimit from './Pages/TabLimit'
 
 const App: React.FC = () => {
   return (
@@ -13,6 +15,12 @@ const App: React.FC = () => {
       <Router>
         <Layout>
           <Switch>
+            <Route path="/tab-limit">
+              <TabLimit />
+            </Route>
+            <Route path="/blocklist">
+              <Blocklist />
+            </Route>
             <Route path="/">
               <Home />
             </Route>

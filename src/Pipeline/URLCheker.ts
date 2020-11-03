@@ -7,10 +7,10 @@ class URLCheker implements PipelineItemInterface {
         const resource = new URLValidator(url);
 
         if (!resource.isValid()) {
-            PipelineResult.Fail
+            PipelineResult.Stop
         }
 
-        return PipelineResult.Success
+        return PipelineResult.Continue
     }
 }
 

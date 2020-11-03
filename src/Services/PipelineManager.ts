@@ -8,12 +8,12 @@ class PipelineManager {
     }
 
     async process (tab: TabInterface, event: TabEvent): Promise<void> {
-      let canContinue = PipelineResult.Fail
+      let canContinue = PipelineResult.Stop
 
       for (let item of this.stack) {
         canContinue = await item.process(tab, event)
 
-        if (canContinue === PipelineResult.Fail) {
+        if (canContinue === PipelineResult.Stop) {
           break
         }
       }

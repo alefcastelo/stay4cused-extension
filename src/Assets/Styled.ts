@@ -80,3 +80,7 @@ export const CountdownChooseTime = styled.div`
       }
     }
 `
+
+export const TabLimitContainer = styled.div`
+  padding: 20px;
+`

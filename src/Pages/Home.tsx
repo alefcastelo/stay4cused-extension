@@ -30,7 +30,7 @@ const Home: React.FC = () => {
   const classes = useStyles()
 
   useEffect(() => {
-    handlerStartCountdown()
+    handlerRestartCountdown()
   }, [])
 
   useEffect(() => {
@@ -48,6 +48,13 @@ const Home: React.FC = () => {
   const handlerCountdownStop = () => {
     setSecondsRemaining(null)
     setCountdownRunning(false)
+  }
+
+  const handlerRestartCountdown = () => {
+    const countdown = new Countdown(defaultTimeChoose)
+    if (countdown.isRunning()) {
+      countdown.run(handlerRemainingCountdown, handlerCountdownStop)
+    }
   }
 
   const handlerStartCountdown = () => {

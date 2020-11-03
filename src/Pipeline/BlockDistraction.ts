@@ -4,16 +4,23 @@ import TabManager from "../Services/TabManager";
 class BlockDistraction implements PipelineItemInterface {
     
     async process({ id, url }: TabInterface, event: TabEvent): Promise<PipelineResult> {
+
+        const distractions = [
+            "www.youtube.com",
+            "www.netflix.com",
+            "www.primevideo.com",
+        ];
+
         const resource = new URL(url)
 
-        if (resource.host !== 'www8.youtube.com') {
-            return PipelineResult.Fail
+        if (!distractions.includes(resource.host)) {
+            return PipelineResult.Continue
         }
 
         const tabManager = new TabManager();
         tabManager.blockTabById(id)
 
-        return PipelineResult.Success;
+        return PipelineResult.Continue;
     }
 }
 

@@ -1,4 +1,7 @@
 import React from 'react'
+import {
+  Link
+} from "react-router-dom";
 import List from '@material-ui/core/List'
 import ListItem from '@material-ui/core/ListItem'
 import ListItemText from '@material-ui/core/ListItemText'
@@ -6,10 +9,8 @@ import ListItemIcon from '@material-ui/core/ListItemIcon'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import {
   faClock,
-  faBell,
   faWindowClose,
   faThList,
-  faChartPie,
   faCaretLeft
 } from '@fortawesome/free-solid-svg-icons'
 import { makeStyles } from '@material-ui/core'
@@ -45,36 +46,30 @@ const Menu: React.FC<MenuProps> = ({ openMenuHandler }: MenuProps) => {
           </ListItemIcon>
           <ListItemText primary="Back" />
         </ListItem>
-        <ListItem button divider className={classes.item}>
-          <ListItemIcon className={classes.icon}>
-            <FontAwesomeIcon icon={faClock} />
-          </ListItemIcon>
-          <ListItemText primary="Pomodoro" />
-        </ListItem>
-        <ListItem button divider className={classes.item}>
-          <ListItemIcon className={classes.icon}>
-            <FontAwesomeIcon icon={faBell} />
-          </ListItemIcon>
-          <ListItemText primary="Sessions" />
-        </ListItem>
-        <ListItem button divider className={classes.item}>
-          <ListItemIcon className={classes.icon}>
-            <FontAwesomeIcon icon={faChartPie} />
-          </ListItemIcon>
-          <ListItemText primary="Tracker" />
-        </ListItem>
-        <ListItem button divider className={classes.item}>
-          <ListItemIcon className={classes.icon}>
-            <FontAwesomeIcon icon={faThList} />
-          </ListItemIcon>
-          <ListItemText primary="Blocklist" />
-        </ListItem>
-        <ListItem button divider className={classes.item}>
-          <ListItemIcon className={classes.icon}>
-            <FontAwesomeIcon icon={faWindowClose} />
-          </ListItemIcon>
-          <ListItemText primary="Tab Limit" />
-        </ListItem>
+        <Link to="/" onClick={() => openMenuHandler(false)}>
+          <ListItem button divider className={classes.item}>
+            <ListItemIcon className={classes.icon}>
+              <FontAwesomeIcon icon={faClock} />
+            </ListItemIcon>
+            <ListItemText primary="Pomodoro" />
+          </ListItem>
+        </Link>
+        <Link to="/blocklist" onClick={() => openMenuHandler(false)}>
+          <ListItem button divider className={classes.item}>
+            <ListItemIcon className={classes.icon}>
+              <FontAwesomeIcon icon={faThList} />
+            </ListItemIcon>
+            <ListItemText primary="Blocklist" />
+          </ListItem>
+        </Link>
+        <Link to="/tab-limit" onClick={() => openMenuHandler(false)}>
+          <ListItem button divider className={classes.item}>
+            <ListItemIcon className={classes.icon}>
+              <FontAwesomeIcon icon={faWindowClose} />
+            </ListItemIcon>
+            <ListItemText primary="Tab Limit" />
+          </ListItem>
+        </Link>
       </List>
     </>
   )
