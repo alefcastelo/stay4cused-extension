@@ -1,7 +1,5 @@
 # Stay4Cused - WIP
-
 Stay4Cused it's an open-source browser extension to help you keep focus during the work time
-
 
 ### Features
 
